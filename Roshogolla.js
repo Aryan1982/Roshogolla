@@ -29,7 +29,7 @@ function CreateRoshogolla(){
 		}
 			
 		
-		roshogollaBottom -=7;
+		roshogollaBottom -=9;
 		roshogolla.style.bottom = roshogollaBottom + 'px';
 	}
 	var FallInterval= setInterval(RoshogollaFall, 70); 
