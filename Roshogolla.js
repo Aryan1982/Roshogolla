@@ -4,7 +4,16 @@ var playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue('left
 var	playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
 var scoreh1 = document.getElementById("score")
 var score = 0;
+var bgMusic = document.getElementById("bg_music");
+var popSound = document.getElementById("popSound");
+var gameOver = document.getElementById("gameOver")
+var startBtn = document.getElementById("startBtn")
 
+function startGame(){
+	startBtn.style.display ="none";
+	bgMusic.play()
+	CreateRoshogolla();
+} 
 	// window.setInterval(CreateRoshogolla, 2000) 
 
 function CreateRoshogolla(){
@@ -16,12 +25,14 @@ function CreateRoshogolla(){
 	function RoshogollaFall(){
 		
 		if( roshogollaBottom < playerBottom + 105 && roshogollaBottom > playerBottom && roshogollaLeft > playerLeft - 50 && roshogollaLeft < playerLeft + 80){
+			popSound.play()
 			roshogollas.removeChild(roshogolla)
 			clearInterval(FallInterval)
 			score++;
 			scoreh1.innerHTML=`Score: ${score}`
 		}
 		if(roshogollaBottom < playerBottom){
+			bgMusic.pause()
 			alert(`you lost, your score is ${score}`);
 			clearInterval(FallInterval)
 			clearTimeout(roshogollaTimeout)
