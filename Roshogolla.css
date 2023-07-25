@@ -84,3 +84,7 @@ body{
 	justify-content: space-between;
 	justify-content: space-around;
 }
+.btnDiv{
+	display: flex;
+	justify-content: center;
+}
