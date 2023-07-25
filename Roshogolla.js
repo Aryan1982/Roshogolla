@@ -49,7 +49,6 @@ function CreateRoshogolla(){
 	roshogolla.style.left = roshogollaLeft + 'px';
 	
 }
-CreateRoshogolla();
 function Left(){
 		// x=document.getElementById('player').offsetLeft;
 		// x = x-10;
